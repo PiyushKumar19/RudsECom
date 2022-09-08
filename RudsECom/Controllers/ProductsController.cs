@@ -22,6 +22,65 @@ namespace RudsECom.Controllers
             Products prods = cRUD.GetProduct(Id);
             return View(prods);
         }
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Create(Products model)
+        {
+            if(ModelState.IsValid)
+            {
+                Products products = new Products()
+                {
+                    ProdName = model.ProdName,
+                    ProdPrice = model.ProdPrice,
+                    Description = model.Description,
+                    Origin = model.Origin,
+                    City = model.City
+                };
+                cRUD.Add(products);
+                return RedirectToAction("AllProducts", new { ProductId = products.ProductId });
+            }
+            return View();
+        }
+        [HttpGet]
+        public IActionResult Edit(int Id)
+        {
+            Products res = cRUD.GetProduct(Id);
+            Products products = new Products()
+            {
+                ProductId = res.ProductId,
+                ProdName = res.ProdName,
+                ProdPrice = res.ProdPrice,
+                Description = res.Description,
+                Origin = res.Origin,
+                City = res.City
+            };
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Edit(Products model)
+        {
+            if (ModelState.IsValid)
+            {
+                Products products = cRUD.GetProduct(model.ProductId);
+                products.ProdName = model.ProdName;
+                products.ProdPrice = model.ProdPrice;
+                products.Description = model.Description;
+                products.Origin = model.Origin;
+                products.City = model.City;
+                Products newProduct =  cRUD.updateProduct(products);
+                return RedirectToAction("AllProducts");
+            };
+            return View();
+        }
+        public IActionResult Delete(int Id)
+        {
+            cRUD.delete(Id);
+            return RedirectToAction("AllProducts");
+        }
         public IActionResult Index()
         {
             return View();
