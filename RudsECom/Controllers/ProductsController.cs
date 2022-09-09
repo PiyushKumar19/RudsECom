@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RudsECom.InterfacesAndSqlRepo;
 using RudsECom.Models;
+using RudsECom.ViewModel;
 
 namespace RudsECom.Controllers
 {
@@ -46,10 +47,10 @@ namespace RudsECom.Controllers
             return View();
         }
         [HttpGet]
-        public IActionResult Edit(int Id)
+        public ViewResult Edit(int Id)
         {
             Products res = cRUD.GetProduct(Id);
-            Products products = new Products()
+            ProductViewModel products = new ProductViewModel()
             {
                 ProductId = res.ProductId,
                 ProdName = res.ProdName,
@@ -58,10 +59,10 @@ namespace RudsECom.Controllers
                 Origin = res.Origin,
                 City = res.City
             };
-            return View();
+            return View(products);
         }
         [HttpPost]
-        public IActionResult Edit(Products model)
+        public IActionResult Edit(ProductViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -71,7 +72,7 @@ namespace RudsECom.Controllers
                 products.Description = model.Description;
                 products.Origin = model.Origin;
                 products.City = model.City;
-                Products newProduct =  cRUD.updateProduct(products);
+                Products upProduct =  cRUD.updateProduct(products);
                 return RedirectToAction("AllProducts");
             };
             return View();

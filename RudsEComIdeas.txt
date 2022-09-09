@@ -1,6 +1,6 @@
 Ruds Project Ideas -- 
 
-1. Implementing CRUD
+1. Implementing CRUD - Done
 2. Applying Entity Framework
 3. Applying Identity Framework
 4. Adding Role Manager
