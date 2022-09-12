@@ -1,4 +1,6 @@
-﻿namespace RudsECom.ViewModel
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace RudsECom.ViewModel
 {
     public class ProductViewModel
     {
@@ -8,5 +10,8 @@
         public string Description { get; set; }
         public string Origin { get; set; }
         public string City { get; set; }
+        [NotMapped]
+        public IFormFile Photos { get; set; }
+        public string? PhotosUrl { get; set; }
     }
 }

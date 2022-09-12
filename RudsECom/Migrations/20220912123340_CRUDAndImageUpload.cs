@@ -4,7 +4,7 @@
 
 namespace RudsECom.Migrations
 {
-    public partial class InitialCommit : Migration
+    public partial class CRUDAndImageUpload : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -18,7 +18,8 @@ namespace RudsECom.Migrations
                     ProdPrice = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Origin = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    City = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    City = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PhotosUrl = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {

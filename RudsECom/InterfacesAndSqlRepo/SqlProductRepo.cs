@@ -1,5 +1,6 @@
 ﻿using RudsECom.AppDbContext;
 using RudsECom.Models;
+using RudsECom.ViewModel;
 
 namespace RudsECom.InterfacesAndSqlRepo
 {
@@ -11,16 +12,33 @@ namespace RudsECom.InterfacesAndSqlRepo
         {
             this.context = _context;
         }
-        public Products Add(Products product)
+        public ProductsModel Add(ProductsModel product)
         {
             context.Products.Add(product);
             context.SaveChanges();
             return product;
         }
 
-        public Products delete(int Id)
+        public async Task<int> AddNewProduct(ProductViewModel model)
         {
-            Products res = context.Products.Find(Id);
+            var newProduct = new ProductsModel()
+            {
+                ProdName = model.ProdName,
+                ProdPrice = model.ProdPrice,
+                Description = model.Description,
+                Origin = model.Origin,
+                City = model.City,
+                PhotosUrl = model.PhotosUrl
+            };
+            await context.Products.AddAsync(newProduct);
+            await context.SaveChangesAsync();
+
+            return newProduct.ProductId;
+        }
+
+        public ProductsModel delete(int Id)
+        {
+            ProductsModel res = context.Products.Find(Id);
             if(res != null)
             {
                 context.Products.Remove(res);
@@ -29,17 +47,17 @@ namespace RudsECom.InterfacesAndSqlRepo
             return res;
         }
 
-        public Products GetProduct(int Id)
+        public ProductsModel GetProduct(int Id)
         {
             return context.Products.Find(Id);
         }
 
-        public IEnumerable<Products> GetProducts()
+        public IEnumerable<ProductsModel> GetProducts()
         {
             return context.Products;
         }
 
-        public Products updateProduct(Products upproduct)
+        public ProductsModel updateProduct(ProductsModel upproduct)
         {
             var newProduct = context.Products.Attach(upproduct);
             newProduct.State = Microsoft.EntityFrameworkCore.EntityState.Modified;

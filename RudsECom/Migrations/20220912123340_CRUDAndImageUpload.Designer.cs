@@ -11,8 +11,8 @@ using RudsECom.AppDbContext;
 namespace RudsECom.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20220908190542_InitialCommit")]
-    partial class InitialCommit
+    [Migration("20220912123340_CRUDAndImageUpload")]
+    partial class CRUDAndImageUpload
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,7 +23,7 @@ namespace RudsECom.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("RudsECom.Models.Products", b =>
+            modelBuilder.Entity("RudsECom.Models.ProductsModel", b =>
                 {
                     b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd()
@@ -40,6 +40,10 @@ namespace RudsECom.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Origin")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhotosUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

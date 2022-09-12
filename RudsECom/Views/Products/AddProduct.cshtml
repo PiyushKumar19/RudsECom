@@ -1,0 +1,77 @@
+﻿@model RudsECom.ViewModel.ProductViewModel
+
+@{
+    ViewData["Title"] = "AddProduct";
+}
+
+<h1>AddProduct</h1>
+
+<h4>Products</h4>
+<hr />
+<div class="container">
+    <h3 class="display-4">Add new book</h3>
+    <hr />
+    @if (ViewBag.IsSuccess == true)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Congratulations</strong> You have added new Product successfully. <br />
+            Click <a asp-controller="Products" asp-action="Details" asp-route-id="@ViewBag.ProductId">here</a> to view the details
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+    <form asp-action="AddProduct" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="ProdName" class="control-label"></label>
+            <input asp-for="ProdName" class="form-control" />
+            <span asp-validation-for="ProdName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProdPrice" class="control-label"></label>
+            <input asp-for="ProdPrice" class="form-control" />
+            <span asp-validation-for="ProdPrice" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description" class="control-label"></label>
+            <input asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Origin" class="control-label"></label>
+            <input asp-for="Origin" class="form-control" />
+            <span asp-validation-for="Origin" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="City" class="control-label"></label>
+            <input asp-for="City" class="form-control" />
+            <span asp-validation-for="City" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Photos" class="control-label"></label>
+            @*<div class="custom-file">
+                <input asp-for="Photos" class="custom-file-input" id="customFile">
+                <label class="custom-file-label" for="customFile">Choose file</label>
+            </div>*@
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Default file input example</label>
+                <input class="form-control" asp-for="Photos" id="formFile">
+            </div>
+            <span asp-validation-for="Photos" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

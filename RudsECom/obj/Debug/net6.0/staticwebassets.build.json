@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "MP3dNBTMWDTv6mawqSUoTtHk7vmLlGsQrMpr6xjMbGQ=",
+  "Hash": "+kftqbDP4hIBPj4L127MKRL+6gP3nXZjsc90wzZqjqw=",
   "Source": "RudsECom",
   "BasePath": "_content/RudsECom",
   "Mode": "Default",
@@ -1069,6 +1069,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\Piyush\\source\\repos\\RudsECom\\RudsECom\\wwwroot\\ProductsImages\\cover\\Telegram (29637) 9_4_2022 9_33_56 AM.png46c7e1f4-b71f-427f-a5c6-c3177ec28952",
+      "SourceId": "RudsECom",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Piyush\\source\\repos\\RudsECom\\RudsECom\\wwwroot\\",
+      "BasePath": "_content/RudsECom",
+      "RelativePath": "ProductsImages/cover/Telegram (29637) 9_4_2022 9_33_56 AM.png46c7e1f4-b71f-427f-a5c6-c3177ec28952",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProductsImages\\cover\\Telegram (29637) 9_4_2022 9_33_56 AM.png46c7e1f4-b71f-427f-a5c6-c3177ec28952"
     }
   ]
 }

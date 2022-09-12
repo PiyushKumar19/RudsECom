@@ -8,10 +8,12 @@ namespace RudsECom.Controllers
     public class ProductsController : Controller
     {
         private readonly IProductsCRUD cRUD;
+        private readonly IWebHostEnvironment webHostEnvironment;
 
-        public ProductsController(IProductsCRUD _cRUD)
+        public ProductsController(IProductsCRUD _cRUD, IWebHostEnvironment _webHostEnvironment)
         {
             this.cRUD = _cRUD;
+            this.webHostEnvironment = _webHostEnvironment;
         }
         public IActionResult AllProducts()
         {
@@ -20,7 +22,7 @@ namespace RudsECom.Controllers
         }
         public IActionResult Details(int Id)
         {
-            Products prods = cRUD.GetProduct(Id);
+            ProductsModel prods = cRUD.GetProduct(Id);
             return View(prods);
         }
         [HttpGet]
@@ -29,11 +31,11 @@ namespace RudsECom.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Create(Products model)
+        public IActionResult Create(ProductsModel model)
         {
             if(ModelState.IsValid)
             {
-                Products products = new Products()
+                ProductsModel products = new ProductsModel()
                 {
                     ProdName = model.ProdName,
                     ProdPrice = model.ProdPrice,
@@ -47,9 +49,49 @@ namespace RudsECom.Controllers
             return View();
         }
         [HttpGet]
+        public async Task<ViewResult> AddProduct(bool isSuccess = false, int prodId = 0)
+        
+        {
+            var model = new ProductViewModel();
+            ViewBag.IsSuccess = isSuccess;
+            ViewBag.ProductId = prodId;
+            return View(model);
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddProduct(ProductViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (model.Photos != null)
+                {
+                    string folder = "ProductsImages/cover/";
+                    //folder += model.PhotosUrl.FileName +
+                    //model.PhotosUrl = await UploadImage(folder, model.Photos);
+                    folder += Guid.NewGuid().ToString() + model.Photos.FileName;
+
+                    model.PhotosUrl = "/"+folder;
+                    string serverFolder = Path.Combine(webHostEnvironment.WebRootPath, folder);
+                    await model.Photos.CopyToAsync(new FileStream(serverFolder, FileMode.Create));
+                }
+                int Id = await cRUD.AddNewProduct(model);
+                if (Id > 0)
+                {
+                    return RedirectToAction(nameof(AddProduct), new { isSuccess = true, prodId = Id });
+                }
+            }
+            return View();
+        }
+        private async Task<string> UploadImage(string folderPath, IFormFile file)
+        {
+            folderPath += Guid.NewGuid().ToString() + "_" + file.FileName;
+            string serverFolder = Path.Combine(webHostEnvironment.WebRootPath, folderPath);
+            await file.CopyToAsync(new FileStream(serverFolder, FileMode.Create));
+            return "/" + folderPath;
+        }
+        [HttpGet]
         public ViewResult Edit(int Id)
         {
-            Products res = cRUD.GetProduct(Id);
+            ProductsModel res = cRUD.GetProduct(Id);
             ProductViewModel products = new ProductViewModel()
             {
                 ProductId = res.ProductId,
@@ -66,13 +108,13 @@ namespace RudsECom.Controllers
         {
             if (ModelState.IsValid)
             {
-                Products products = cRUD.GetProduct(model.ProductId);
+                ProductsModel products = cRUD.GetProduct(model.ProductId);
                 products.ProdName = model.ProdName;
                 products.ProdPrice = model.ProdPrice;
                 products.Description = model.Description;
                 products.Origin = model.Origin;
                 products.City = model.City;
-                Products upProduct =  cRUD.updateProduct(products);
+                ProductsModel upProduct =  cRUD.updateProduct(products);
                 return RedirectToAction("AllProducts");
             };
             return View();
