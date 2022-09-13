@@ -50,15 +50,19 @@
         </div>
         <div class="form-group">
             <label asp-for="Photos" class="control-label"></label>
-            @*<div class="custom-file">
-                <input asp-for="Photos" class="custom-file-input" id="customFile">
-                <label class="custom-file-label" for="customFile">Choose file</label>
-            </div>*@
             <div class="mb-3">
                 <label for="formFile" class="form-label">Default file input example</label>
                 <input class="form-control" asp-for="Photos" id="formFile">
             </div>
             <span asp-validation-for="Photos" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="GalleryPhotos" class="control-label"></label>
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Default file input example</label>
+                <input class="form-control" asp-for="GalleryPhotos" id="formFile">
+            </div>
+            <span asp-validation-for="GalleryPhotos" class="text-danger"></span>
         </div>
         <div class="form-group">
             <input type="submit" value="Create" class="btn btn-primary" />

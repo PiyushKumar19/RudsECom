@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using RudsECom.Models;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RudsECom.ViewModel
 {
@@ -13,5 +14,7 @@ namespace RudsECom.ViewModel
         [NotMapped]
         public IFormFile Photos { get; set; }
         public string? PhotosUrl { get; set; }
+        public IFormFileCollection? GalleryPhotos { get; set; }
+        public List<GalleryModel>? Gallery { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RudsECom.AppDbContext;
 
@@ -11,9 +12,10 @@ using RudsECom.AppDbContext;
 namespace RudsECom.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20220912182941_UploadingMultipleImages")]
+    partial class UploadingMultipleImages
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,18 +32,23 @@ namespace RudsECom.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int>("BookId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("ProductId")
+                    b.Property<int?>("ProductsModelProductId")
                         .HasColumnType("int");
 
                     b.Property<string>("URL")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex("ProductsModelProductId");
 
                     b.ToTable("ProductGallery");
                 });
@@ -85,11 +92,9 @@ namespace RudsECom.Migrations
 
             modelBuilder.Entity("RudsECom.Models.ProductGallery", b =>
                 {
-                    b.HasOne("RudsECom.Models.ProductsModel", "Product")
+                    b.HasOne("RudsECom.Models.ProductsModel", null)
                         .WithMany("ProductGallery")
-                        .HasForeignKey("ProductId");
-
-                    b.Navigation("Product");
+                        .HasForeignKey("ProductsModelProductId");
                 });
 
             modelBuilder.Entity("RudsECom.Models.ProductsModel", b =>

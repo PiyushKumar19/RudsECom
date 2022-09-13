@@ -20,9 +20,9 @@ namespace RudsECom.Controllers
             var products = cRUD.GetProducts();
             return View(products);
         }
-        public IActionResult Details(int Id)
+        public async Task<ViewResult> Details(int Id)
         {
-            ProductsModel prods = cRUD.GetProduct(Id);
+            var prods = await cRUD.GetProductById(Id);
             return View(prods);
         }
         [HttpGet]
@@ -65,13 +65,22 @@ namespace RudsECom.Controllers
                 if (model.Photos != null)
                 {
                     string folder = "ProductsImages/cover/";
-                    //folder += model.PhotosUrl.FileName +
-                    //model.PhotosUrl = await UploadImage(folder, model.Photos);
-                    folder += Guid.NewGuid().ToString() + model.Photos.FileName;
+                    model.PhotosUrl = await UploadImage(folder, model.Photos);
+                }
+                if (model.GalleryPhotos != null)
+                {
+                    string folder = "ProductsImages/gallery/";
 
-                    model.PhotosUrl = "/"+folder;
-                    string serverFolder = Path.Combine(webHostEnvironment.WebRootPath, folder);
-                    await model.Photos.CopyToAsync(new FileStream(serverFolder, FileMode.Create));
+                    model.Gallery = new List<GalleryModel>();
+                    foreach (var file in model.GalleryPhotos)
+                    {
+                        var gallery = new GalleryModel()
+                        {
+                            Name = file.Name,
+                            URL = await UploadImage(folder, file)
+                        };
+                        model.Gallery.Add(gallery);
+                    }
                 }
                 int Id = await cRUD.AddNewProduct(model);
                 if (Id > 0)

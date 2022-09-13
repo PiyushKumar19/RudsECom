@@ -13,5 +13,6 @@ namespace RudsECom.Models
         public string Origin { get; set; }
         public string City { get; set; }
         public string PhotosUrl { get; set; }
+        public ICollection<ProductGallery>? ProductGallery { get; set; }
     }
 }

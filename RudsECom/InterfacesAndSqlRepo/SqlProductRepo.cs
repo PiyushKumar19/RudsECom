@@ -1,4 +1,5 @@
-﻿using RudsECom.AppDbContext;
+﻿using Microsoft.EntityFrameworkCore;
+using RudsECom.AppDbContext;
 using RudsECom.Models;
 using RudsECom.ViewModel;
 
@@ -30,6 +31,17 @@ namespace RudsECom.InterfacesAndSqlRepo
                 City = model.City,
                 PhotosUrl = model.PhotosUrl
             };
+
+            newProduct.ProductGallery = new List<ProductGallery>();
+
+            foreach (var file in model.Gallery)
+            {
+                newProduct.ProductGallery.Add(new ProductGallery()
+                {
+                    Name = file.Name,
+                    URL = file.URL
+                });
+            }
             await context.Products.AddAsync(newProduct);
             await context.SaveChangesAsync();
 
@@ -50,6 +62,47 @@ namespace RudsECom.InterfacesAndSqlRepo
         public ProductsModel GetProduct(int Id)
         {
             return context.Products.Find(Id);
+        }
+        //public async Task<ProductViewModel> GetProductById(int Id)
+        //{
+        //    return await context.Products.Where(x => x.ProductId == Id)
+        //         .Select(book => new ProductViewModel()
+        //         {
+        //             ProdName = book.ProdName,
+        //             ProdPrice = book.ProdPrice,
+        //             Description = book.Description,
+        //             ProductId = book.ProductId,
+        //             Origin = book.Origin,
+        //             City = book.City,
+        //             PhotosUrl = book.PhotosUrl,
+        //             Gallery = book.ProductGallery.Select(g => new GalleryModel()
+        //             {
+        //                 Id = g.Id,
+        //                 Name = g.Name,
+        //                 URL = g.URL
+        //             }).ToList()
+        //         }).FirstOrDefaultAsync();
+        //}
+
+        public async Task<ProductViewModel> GetProductById(int id)
+        {
+            return await context.Products.Where(x => x.ProductId == id)
+                 .Select(book => new ProductViewModel()
+                 {
+                     ProdName = book.ProdName,
+                     ProdPrice = book.ProdPrice,
+                     Description = book.Description,
+                     ProductId = book.ProductId,
+                     Origin = book.Origin,
+                     City = book.City,
+                     PhotosUrl = book.PhotosUrl,
+                     Gallery = book.ProductGallery.Select(g => new GalleryModel()
+                     {
+                         Id = g.Id,
+                         Name = g.Name,
+                         URL = g.URL
+                     }).ToList()
+                 }).FirstOrDefaultAsync();
         }
 
         public IEnumerable<ProductsModel> GetProducts()

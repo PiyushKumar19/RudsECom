@@ -7,6 +7,7 @@ namespace RudsECom.InterfacesAndSqlRepo
     {
         public ProductsModel GetProduct(int Id);
         IEnumerable<ProductsModel> GetProducts();
+        Task<ProductViewModel> GetProductById(int Id);
         ProductsModel Add(ProductsModel product);
         ProductsModel delete(int Id);
         ProductsModel updateProduct(ProductsModel upproduct);
