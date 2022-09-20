@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using RudsECom.AppDbContext;
 using RudsECom.InterfacesAndSqlRepo;
@@ -10,6 +11,9 @@ builder.Services.AddTransient<IProductsCRUD, SqlProductRepo>();
 string cs = "Database=DbRudsECom;server=LAPTOP-2SDVC21L;Uid=sa;password=Piyush@1529;";
 builder.Services.AddDbContextPool<DatabaseContext>(option =>
 option.UseSqlServer(cs));
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<DatabaseContext>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -20,6 +24,8 @@ if (!app.Environment.IsDevelopment())
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
