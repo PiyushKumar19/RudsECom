@@ -11,5 +11,7 @@ namespace RudsECom.AppDbContext
         }
         public DbSet<ProductsModel> Products { get; set; }
         public DbSet<ProductGallery> ProductGallery { get; set; }
+        public DbSet<SellersModel> Sellers { get; set; }
+        public DbSet<ProdSellLinkModel> ProdSellLinks { get; set; }
     }
 }

@@ -16,5 +16,6 @@ namespace RudsECom.ViewModel
         public string? PhotosUrl { get; set; }
         public IFormFileCollection? GalleryPhotos { get; set; }
         public List<GalleryModel>? Gallery { get; set; }
+        public int? SellerId { get; set; }
     }
 }

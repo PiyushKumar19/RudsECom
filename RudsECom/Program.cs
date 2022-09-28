@@ -8,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<IProductsCRUD, SqlProductRepo>();
+builder.Services.AddTransient<IProdSellLinkCRUD, SqlProdSellLinkRepo>();
 string cs = "Database=DbRudsECom;server=LAPTOP-2SDVC21L;Uid=sa;password=Piyush@1529;";
 builder.Services.AddDbContextPool<DatabaseContext>(option =>
 option.UseSqlServer(cs));

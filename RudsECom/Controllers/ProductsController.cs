@@ -9,11 +9,13 @@ namespace RudsECom.Controllers
     {
         private readonly IProductsCRUD cRUD;
         private readonly IWebHostEnvironment webHostEnvironment;
+        private readonly IProdSellLinkCRUD psCRUD;
 
-        public ProductsController(IProductsCRUD _cRUD, IWebHostEnvironment _webHostEnvironment)
+        public ProductsController(IProductsCRUD _cRUD, IWebHostEnvironment _webHostEnvironment, IProdSellLinkCRUD _psCRUD)
         {
             this.cRUD = _cRUD;
             this.webHostEnvironment = _webHostEnvironment;
+            psCRUD = _psCRUD;
         }
         public IActionResult AllProducts()
         {
@@ -25,34 +27,16 @@ namespace RudsECom.Controllers
             var prods = await cRUD.GetProductById(Id);
             return View(prods);
         }
+
         [HttpGet]
-        public IActionResult Create()
-        {
-            return View();
-        }
-        [HttpPost]
-        public IActionResult Create(ProductsModel model)
-        {
-            if(ModelState.IsValid)
-            {
-                ProductsModel products = new ProductsModel()
-                {
-                    ProdName = model.ProdName,
-                    ProdPrice = model.ProdPrice,
-                    Description = model.Description,
-                    Origin = model.Origin,
-                    City = model.City
-                };
-                cRUD.Add(products);
-                return RedirectToAction("AllProducts", new { ProductId = products.ProductId });
-            }
-            return View();
-        }
-        [HttpGet]
-        public async Task<ViewResult> AddProduct(bool isSuccess = false, int prodId = 0)
+        public async Task<IActionResult> AddProduct(int SellerId, bool isSuccess = false, int prodId = 0)
         
         {
-            var model = new ProductViewModel();
+            ViewBag.SellerId = SellerId;
+            var model = new ProductViewModel()
+            {
+                SellerId = SellerId
+            };
             ViewBag.IsSuccess = isSuccess;
             ViewBag.ProductId = prodId;
             return View(model);
@@ -82,7 +66,13 @@ namespace RudsECom.Controllers
                         model.Gallery.Add(gallery);
                     }
                 }
+
+
                 int Id = await cRUD.AddNewProduct(model);
+                if (model.SellerId != null)
+                {
+                    await psCRUD.LinkProdSell(model, Id);
+                }
                 if (Id > 0)
                 {
                     return RedirectToAction(nameof(AddProduct), new { isSuccess = true, prodId = Id });

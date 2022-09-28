@@ -14,5 +14,6 @@ namespace RudsECom.Models
         public string City { get; set; }
         public string PhotosUrl { get; set; }
         public ICollection<ProductGallery>? ProductGallery { get; set; }
+        public List<SellersModel> Sellers { get; set; }
     }
 }

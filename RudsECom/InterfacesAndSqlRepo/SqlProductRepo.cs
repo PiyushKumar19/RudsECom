@@ -51,7 +51,7 @@ namespace RudsECom.InterfacesAndSqlRepo
         public ProductsModel delete(int Id)
         {
             ProductsModel res = context.Products.Find(Id);
-            if(res != null)
+            if (res != null)
             {
                 context.Products.Remove(res);
                 context.SaveChanges();

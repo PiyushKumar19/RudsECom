@@ -220,6 +220,29 @@ namespace RudsECom.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("RudsECom.Models.ProdSellLinkModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("SellerId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("SellerId");
+
+                    b.ToTable("ProdSellLinks");
+                });
+
             modelBuilder.Entity("RudsECom.Models.ProductGallery", b =>
                 {
                     b.Property<int>("Id")
@@ -281,6 +304,40 @@ namespace RudsECom.Migrations
                     b.ToTable("Products");
                 });
 
+            modelBuilder.Entity("RudsECom.Models.SellersModel", b =>
+                {
+                    b.Property<int>("SellerId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SellerId"), 1L, 1);
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ContactNo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("ProductsProductId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SellerName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("SellerId");
+
+                    b.HasIndex("ProductsProductId");
+
+                    b.ToTable("Sellers");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -332,6 +389,21 @@ namespace RudsECom.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("RudsECom.Models.ProdSellLinkModel", b =>
+                {
+                    b.HasOne("RudsECom.Models.ProductsModel", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId");
+
+                    b.HasOne("RudsECom.Models.SellersModel", "Seller")
+                        .WithMany()
+                        .HasForeignKey("SellerId");
+
+                    b.Navigation("Product");
+
+                    b.Navigation("Seller");
+                });
+
             modelBuilder.Entity("RudsECom.Models.ProductGallery", b =>
                 {
                     b.HasOne("RudsECom.Models.ProductsModel", "Product")
@@ -341,9 +413,20 @@ namespace RudsECom.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("RudsECom.Models.SellersModel", b =>
+                {
+                    b.HasOne("RudsECom.Models.ProductsModel", "Products")
+                        .WithMany("Sellers")
+                        .HasForeignKey("ProductsProductId");
+
+                    b.Navigation("Products");
+                });
+
             modelBuilder.Entity("RudsECom.Models.ProductsModel", b =>
                 {
                     b.Navigation("ProductGallery");
+
+                    b.Navigation("Sellers");
                 });
 #pragma warning restore 612, 618
         }
