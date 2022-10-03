@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "srAUnb1zc3WyOk0bKyE7R1fjU78pvr+41uYZ7WKdBos=",
+  "Hash": "XG7H/dKdAMomVLTvo7/xWsLm4u0UG1diVA10a9z9ATI=",
   "Source": "RudsECom",
   "BasePath": "_content/RudsECom",
   "Mode": "Default",
@@ -49,6 +49,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Piyush\\source\\repos\\RudsECom\\RudsECom\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\RudsECom.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Piyush\\source\\repos\\RudsECom\\RudsECom\\wwwroot\\css\\input.css",
+      "SourceId": "RudsECom",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Piyush\\source\\repos\\RudsECom\\RudsECom\\wwwroot\\",
+      "BasePath": "_content/RudsECom",
+      "RelativePath": "css/input.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\input.css"
+    },
+    {
+      "Identity": "C:\\Users\\Piyush\\source\\repos\\RudsECom\\RudsECom\\wwwroot\\css\\output.css",
+      "SourceId": "RudsECom",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Piyush\\source\\repos\\RudsECom\\RudsECom\\wwwroot\\",
+      "BasePath": "_content/RudsECom",
+      "RelativePath": "css/output.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\output.css"
     },
     {
       "Identity": "C:\\Users\\Piyush\\source\\repos\\RudsECom\\RudsECom\\wwwroot\\css\\site.css",
@@ -1156,6 +1190,23 @@
       "OriginalItemSpec": "wwwroot\\ProductsImages\\cover\\4a817b4d-7e07-4a53-91ab-603b6fb99cf9_306275329_839586813707535_3725408124699703710_n.jpg"
     },
     {
+      "Identity": "C:\\Users\\Piyush\\source\\repos\\RudsECom\\RudsECom\\wwwroot\\ProductsImages\\cover\\b9cbe032-7a4d-4e3d-ae00-ca7856ad3750_306274237_751738772794411_7629620389276328484_n (1).jpg",
+      "SourceId": "RudsECom",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Piyush\\source\\repos\\RudsECom\\RudsECom\\wwwroot\\",
+      "BasePath": "_content/RudsECom",
+      "RelativePath": "ProductsImages/cover/b9cbe032-7a4d-4e3d-ae00-ca7856ad3750_306274237_751738772794411_7629620389276328484_n (1).jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProductsImages\\cover\\b9cbe032-7a4d-4e3d-ae00-ca7856ad3750_306274237_751738772794411_7629620389276328484_n (1).jpg"
+    },
+    {
       "Identity": "C:\\Users\\Piyush\\source\\repos\\RudsECom\\RudsECom\\wwwroot\\ProductsImages\\cover\\ba9024db-d259-49b6-b0dc-f547fe2e9650_306275329_839586813707535_3725408124699703710_n.jpg",
       "SourceId": "RudsECom",
       "SourceType": "Discovered",
@@ -1309,6 +1360,23 @@
       "OriginalItemSpec": "wwwroot\\ProductsImages\\gallery\\14167199-657d-4456-afd5-3fe8c3ebbea6_306744290_191348226601687_6375591887754091153_n.jpg"
     },
     {
+      "Identity": "C:\\Users\\Piyush\\source\\repos\\RudsECom\\RudsECom\\wwwroot\\ProductsImages\\gallery\\173f9086-386d-4802-9b7e-0011a8d7797b_306274237_751738772794411_7629620389276328484_n (1).jpg",
+      "SourceId": "RudsECom",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Piyush\\source\\repos\\RudsECom\\RudsECom\\wwwroot\\",
+      "BasePath": "_content/RudsECom",
+      "RelativePath": "ProductsImages/gallery/173f9086-386d-4802-9b7e-0011a8d7797b_306274237_751738772794411_7629620389276328484_n (1).jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProductsImages\\gallery\\173f9086-386d-4802-9b7e-0011a8d7797b_306274237_751738772794411_7629620389276328484_n (1).jpg"
+    },
+    {
       "Identity": "C:\\Users\\Piyush\\source\\repos\\RudsECom\\RudsECom\\wwwroot\\ProductsImages\\gallery\\18f755f6-7dd3-41ee-8357-dd5950bd00f3_IMG20181108095954.jpg",
       "SourceId": "RudsECom",
       "SourceType": "Discovered",
@@ -1358,6 +1426,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\ProductsImages\\gallery\\1f7700c0-8673-4a01-89aa-39ea66bfc019_306275329_839586813707535_3725408124699703710_n.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Piyush\\source\\repos\\RudsECom\\RudsECom\\wwwroot\\ProductsImages\\gallery\\2d39d36e-440d-4f7e-a5e1-fd6e988b7fc4_306185045_393729686276813_2252094097915266510_n.jpg",
+      "SourceId": "RudsECom",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Piyush\\source\\repos\\RudsECom\\RudsECom\\wwwroot\\",
+      "BasePath": "_content/RudsECom",
+      "RelativePath": "ProductsImages/gallery/2d39d36e-440d-4f7e-a5e1-fd6e988b7fc4_306185045_393729686276813_2252094097915266510_n.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProductsImages\\gallery\\2d39d36e-440d-4f7e-a5e1-fd6e988b7fc4_306185045_393729686276813_2252094097915266510_n.jpg"
     },
     {
       "Identity": "C:\\Users\\Piyush\\source\\repos\\RudsECom\\RudsECom\\wwwroot\\ProductsImages\\gallery\\3709ddde-973d-4857-a7a0-a0fba7590e16_306003030_750667782691694_2178525489065838077_n.jpg",
@@ -1530,6 +1615,23 @@
       "OriginalItemSpec": "wwwroot\\ProductsImages\\gallery\\5eaa2241-94b5-4ea1-a6ee-bcf41babc579_306832881_195233152949902_4216124363208313922_n.jpg"
     },
     {
+      "Identity": "C:\\Users\\Piyush\\source\\repos\\RudsECom\\RudsECom\\wwwroot\\ProductsImages\\gallery\\62339219-f9b3-4e7d-bf03-84c676ad53d4_306241115_153918917267356_5082231182819125770_n.jpg",
+      "SourceId": "RudsECom",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Piyush\\source\\repos\\RudsECom\\RudsECom\\wwwroot\\",
+      "BasePath": "_content/RudsECom",
+      "RelativePath": "ProductsImages/gallery/62339219-f9b3-4e7d-bf03-84c676ad53d4_306241115_153918917267356_5082231182819125770_n.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProductsImages\\gallery\\62339219-f9b3-4e7d-bf03-84c676ad53d4_306241115_153918917267356_5082231182819125770_n.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Piyush\\source\\repos\\RudsECom\\RudsECom\\wwwroot\\ProductsImages\\gallery\\65a4f58a-e057-4aab-b6e2-86ef05d70984_306832881_195233152949902_4216124363208313922_n.jpg",
       "SourceId": "RudsECom",
       "SourceType": "Discovered",
@@ -1596,6 +1698,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\ProductsImages\\gallery\\6923de51-81fd-403c-bfdd-e5b874ab5aa1_306274237_751738772794411_7629620389276328484_n (1).jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Piyush\\source\\repos\\RudsECom\\RudsECom\\wwwroot\\ProductsImages\\gallery\\720dc532-bed2-46fd-90ad-8d914ae1bd66_306003030_750667782691694_2178525489065838077_n.jpg",
+      "SourceId": "RudsECom",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Piyush\\source\\repos\\RudsECom\\RudsECom\\wwwroot\\",
+      "BasePath": "_content/RudsECom",
+      "RelativePath": "ProductsImages/gallery/720dc532-bed2-46fd-90ad-8d914ae1bd66_306003030_750667782691694_2178525489065838077_n.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProductsImages\\gallery\\720dc532-bed2-46fd-90ad-8d914ae1bd66_306003030_750667782691694_2178525489065838077_n.jpg"
     },
     {
       "Identity": "C:\\Users\\Piyush\\source\\repos\\RudsECom\\RudsECom\\wwwroot\\ProductsImages\\gallery\\79da6478-110f-4d7e-8dab-3819f7b0934e_306275329_839586813707535_3725408124699703710_n.jpg",
@@ -1681,6 +1800,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\ProductsImages\\gallery\\91010c70-4c2a-4dd3-a78b-43fb75e4b5ab_306003030_750667782691694_2178525489065838077_n.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Piyush\\source\\repos\\RudsECom\\RudsECom\\wwwroot\\ProductsImages\\gallery\\a1c38aa4-8ea3-400c-8848-9c3f56ed2038_306832881_195233152949902_4216124363208313922_n.jpg",
+      "SourceId": "RudsECom",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Piyush\\source\\repos\\RudsECom\\RudsECom\\wwwroot\\",
+      "BasePath": "_content/RudsECom",
+      "RelativePath": "ProductsImages/gallery/a1c38aa4-8ea3-400c-8848-9c3f56ed2038_306832881_195233152949902_4216124363208313922_n.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProductsImages\\gallery\\a1c38aa4-8ea3-400c-8848-9c3f56ed2038_306832881_195233152949902_4216124363208313922_n.jpg"
     },
     {
       "Identity": "C:\\Users\\Piyush\\source\\repos\\RudsECom\\RudsECom\\wwwroot\\ProductsImages\\gallery\\b0c383bb-e3b0-4ea3-baed-ed42eb6f4dff_306003030_750667782691694_2178525489065838077_n.jpg",

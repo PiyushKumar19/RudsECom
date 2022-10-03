@@ -1,0 +1,30 @@
+<section class="bg-sky-800 max-x-xl mb-2 dark:bg-gray-900 rounded-lg">
+        <div class="container px-6 py-10 mx-auto py-2">
+            <h1 class="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white">From the blog</h1>
+
+            <div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2">
+
+                <div class="lg:flex">
+                    @* Image of the employee.*@
+@*                    <img class="object-cover w-full h-56 rounded-lg lg:w-64" src="@item.PhotoURL" alt="">
+*@
+                    <div class="flex flex-col justify-between py-6 lg:mx-6">
+                        <a href="#" class="text-xl font-semibold text-blue-800 hover:underline dark:text-white ">
+                            @item.Name
+                        </a>
+                        <p class="text-xl font-semibold text-blue-800 hover:underline dark:text-white ">@item.Email</p>
+                        <p class="text-xl font-semibold text-blue-800 hover:underline dark:text-white ">@item.FatherName</p>
+                        <p class="text-xl font-semibold text-blue-800 hover:underline dark:text-white ">@item.ContactNo</p>
+
+                        <span class="text-sm text-gray-500 dark:text-gray-300">On: 20 October 2019</span>
+                        <span class="text-sm text-gray-500 dark:text-gray-300">
+                            <a asp-action="Edit" asp-route-id="@item.EmployeeId">Edit</a>
+                            <a asp-action="GetEmployee" asp-route-id="@item.EmployeeId">Details</a>
+                            <a asp-action="Delete" asp-route-id="@item.EmployeeId">Delete</a>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
