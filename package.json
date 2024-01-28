@@ -2,6 +2,7 @@
   "name": "rudsecom",
   "version": "1.0.0",
   "description": "",
+  "start": "dotnet run"
   "scripts": {
 		"input:build": "npx tailwind build -i ./RudsECom/wwwroot/css/input.css -o ./RudsECom/wwwroot/css/output.css"
 	  },
