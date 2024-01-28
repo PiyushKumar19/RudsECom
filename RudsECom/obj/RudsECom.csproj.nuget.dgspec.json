@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Piyush\\source\\repos\\RudsECom\\RudsECom\\RudsECom.csproj": {}
+    "E:\\Temp\\RudsEcom\\RudsECom\\RudsECom\\RudsECom.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Piyush\\source\\repos\\RudsECom\\RudsECom\\RudsECom.csproj": {
+    "E:\\Temp\\RudsEcom\\RudsECom\\RudsECom\\RudsECom.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Piyush\\source\\repos\\RudsECom\\RudsECom\\RudsECom.csproj",
+        "projectUniqueName": "E:\\Temp\\RudsEcom\\RudsECom\\RudsECom\\RudsECom.csproj",
         "projectName": "RudsECom",
-        "projectPath": "C:\\Users\\Piyush\\source\\repos\\RudsECom\\RudsECom\\RudsECom.csproj",
-        "packagesPath": "C:\\Users\\Piyush\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Piyush\\source\\repos\\RudsECom\\RudsECom\\obj\\",
+        "projectPath": "E:\\Temp\\RudsEcom\\RudsECom\\RudsECom\\RudsECom.csproj",
+        "packagesPath": "C:\\Users\\jayan\\.nuget\\packages\\",
+        "outputPath": "E:\\Temp\\RudsEcom\\RudsECom\\RudsECom\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Piyush\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jayan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -97,7 +97,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
