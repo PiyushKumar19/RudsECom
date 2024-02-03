@@ -1,0 +1,4 @@
+E:\Temp\RudsEcom\linux64_musl\appsettings.Development.json
+E:\Temp\RudsEcom\linux64_musl\appsettings.json
+E:\Temp\RudsEcom\linux64_musl\RudsECom.pdb
+E:\Temp\RudsEcom\linux64_musl\RudsECom

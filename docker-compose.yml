@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  rudsecom:
+    image: ${DOCKER_REGISTRY-}rudsecom
+    build:
+      context: .
+      dockerfile: RudsECom/Dockerfile
